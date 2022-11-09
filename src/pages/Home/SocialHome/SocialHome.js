@@ -91,11 +91,12 @@ const SocialHome = () => {
   }
 
   return (
-    <div>
+    <div> 
       <div className="px-4 py-6 mt-[70px]">
-        <div class="grid grid-cols-6 gap-4 ">
+        <div class="grid grid-cols-6 gap-4">
           {/* ---left side bar start--- */}
           <div class="col-span-1">
+            <div className=" ">
             <div>
               <h2 className="text-2xl font-medium mb-2 text-[#444]">Key Features</h2>
               <div className="bg-[#FFFFFF] rounded shadow-sm">
@@ -191,10 +192,11 @@ const SocialHome = () => {
                  </div>
               </div>
             </div>
+            </div>
           </div>
           {/* ---left side bar end--- */}
 
-        {/* ---right video part start--- */}
+        {/* ---middle video part start--- */}
           <div class="col-span-4">
             <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
               {videoItems.map((vdo) => (
@@ -218,8 +220,10 @@ const SocialHome = () => {
               ))}
             </div>
           </div>
-          {/* ---right video part end--- */}
+          {/* ---middle video part end--- */}
 
+
+          {/* ---right side bar end--- */}
           <div class="col-span-1 sticky">
             <div>
               <h2 className="text-2xl font-medium mb-2 text-[#444]">Key Features</h2>
@@ -276,7 +280,7 @@ const SocialHome = () => {
               </div>
             </div>
 
-            <div class="mt-2 ">
+            <div class="mt-2">
               <div className="flex justify-between items-center">
               <h2 className="text-2xl font-medium mb-2 text-[#444]">Community</h2>
               <i onClick={toggleCommunity} class={`fa-solid ${showCommunity ? 'fa-chevron-up ': 'fa-chevron-down'} pr-2`}></i>
@@ -317,6 +321,7 @@ const SocialHome = () => {
               </div>
             </div>
           </div>
+          {/* ---right side bar end--- */}
 
         </div>
       </div>

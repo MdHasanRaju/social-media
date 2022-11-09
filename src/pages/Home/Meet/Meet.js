@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Meet.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -40,6 +40,21 @@ const sliderItems = [
 ];
 
 const Meet = () => {
+  const [showNewMeeting, setNewMeeting] = useState(false);
+
+  const newMeeting = () => {
+    setNewMeeting(!showNewMeeting)
+  }
+
+  const menuRef = useRef();
+  useEffect(() => {
+    document.addEventListener('mousedown', (e) => {
+      if(!menuRef?.current?.contains(e.target)){
+        setNewMeeting(false);
+      }
+    })
+  } ,[])
+
   return (
     <div className="md:flex justify-between items-center w-screen h-screen px-6 py-8">
       {/* left-div meeting head text*/}
@@ -52,15 +67,19 @@ const Meet = () => {
           Google Meet, to make it free and available for all.
         </p>
 
-        <div className="md:flex sm:flex-wrap items-center gap-4">
-          <div className="bg-[#1a73e8] text-[#fff] rounded p-3 w-[160px] min-w-[150px] ">
-            <p className="md:text-sm sm:text-sm">
+        <div  className="md:flex sm:flex-wrap items-center gap-4">
+          <div ref={menuRef} onClick={newMeeting} className="bg-[#1a73e8] text-[#fff] rounded p-3 w-[150px] min-w-[140px] cursor-pointer">
+            <p className="md:text-sm sm:text-sm ">
               <span>
                 <i class="fa-solid fa-video "></i>
               </span>{" "}
               New Meeting
             </p>
-          </div>
+            
+          {
+            showNewMeeting && <div> new pop up</div>
+          }
+          </div> 
 
           <div className="rounded sm:mt-4 md:mt-0 lg:mt-0">
             <form className={`w-[260px]`}>

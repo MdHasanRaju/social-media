@@ -29,7 +29,7 @@ const Navbar = () => {
         </a>
       </div>
       {/* <!--search--> */}
-      <form className={`${showBar ? "block " : "hidden"} lg:w-1/3 md:w-1/4`}>
+      <form className={`${showBar ? "block " : "hidden"} lg:w-1/3 md:w-1/4 md:block lg:block`}>
         <label
           for="default-search"
           class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -65,7 +65,7 @@ const Navbar = () => {
       </form>
 
       {/* <!--nav--> */}
-      <nav className={`${showBar  ? "block " : "hidden"}`}>
+      <nav className={`${showBar  ? "block " : "hidden"} md:block lg:block`}>
         <ul className="list-reset md:flex md:items-center">
           <li className="md:ml-4 sm:mt-4 md:mt-0">
           <div  className="indicator"> 
